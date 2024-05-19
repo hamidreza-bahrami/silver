@@ -40,6 +40,17 @@ def show_page():
                         x = np.array([[SPX, USO, GLD, EUR_USD]])
 
         prediction = model.predict(x)
-        st.write("<h4 style='text-align: right; color: gray;'>:بر اساس داده های وارد شده، قیمت نقره به دلار برابر خواهد بود با</h4>", unsafe_allow_html=True)
+        text1 = 'بر اساس داده های وارد شده، قیمت نقره به دلار برابر خواهد بود با'
+        text2 = 'Based on my analysis, Silver Price is going to be:'
+        def stream_data1():
+            for word in text1.split(" "):
+                yield word + " "
+                time.sleep(0.09)
+        st.write_stream(stream_data1)
+        def stream_data2():
+                for word in text2.split(" "):
+                    yield word + " "
+                    time.sleep(0.09)
+        st.write_stream(stream_data2)
         st.subheader(prediction[0])
 show_page()
