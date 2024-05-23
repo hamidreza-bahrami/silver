@@ -32,7 +32,7 @@ def show_page():
         with col3:
             st.write(' ')
         st.divider()
-        st.write("<h4 style='text-align: right; color: gray;'>تخمین قیمت طلا با دقت 98 درصد</h>", unsafe_allow_html=True)
+        st.write("<h4 style='text-align: right; color: gray;'>تخمین قیمت نقره با دقت 98 درصد</h>", unsafe_allow_html=True)
         st.write("<h4 style='text-align: right; color: gray;'>ساخته شده با جمع آوری داده 15 سال بازار سهام</h>", unsafe_allow_html=True)
         st.divider()
         st.write('Developed & Designed by')
