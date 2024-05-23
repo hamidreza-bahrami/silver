@@ -5,6 +5,7 @@ import pickle
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 import time
+st.set_page_config(page_title='قیمت نقره - RoboAi', layout='centered', page_icon='🤖')
 
 def load_model():
     with open('saved.pkl', 'rb') as file:
@@ -22,6 +23,20 @@ def show_page():
     st.write("<h3 style='text-align: center; color: gray;'>شاخص های زیر را وارد کنید</h3>", unsafe_allow_html=True)
     st.write("<h4 style='text-align: center; color: gray;'>Robo-Ai.ir طراحی شده توسط</h4>", unsafe_allow_html=True)
     st.link_button("Robo-Ai بازگشت به", "https://robo-ai.ir")
+    with st.sidebar:
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            st.write(' ')
+        with col2:
+            st.image('img.png')
+        with col3:
+            st.write(' ')
+        st.divider()
+        st.write("<h4 style='text-align: right; color: gray;'>تخمین قیمت طلا با دقت 98 درصد</h>", unsafe_allow_html=True)
+        st.write("<h4 style='text-align: right; color: gray;'>ساخته شده با جمع آوری داده 15 سال بازار سهام</h>", unsafe_allow_html=True)
+        st.divider()
+        st.write('Developed & Designed by')
+        st.write('Hamidreza Bahrami')
     
     SPX = st.slider('شاخص سهام 500 شرکت بزرگ ایالات متحده (S & P 500)', 676.0, 2872.0, 700.0)
 
